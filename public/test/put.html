@@ -4,12 +4,13 @@
 <head>
     <title>PUT file to S3</title>
     <meta name="referrer" content="origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src *.sos-ch-dk-2.exo.io 'self'; connect-src 'self' *.sos-ch-dk-2.exo.io;">
-
-</head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *.sos-ch-dk-2.exo.io cdnjs.cloudflare.com 'self'; connect-src 'self' *.sos-ch-dk-2.exo.io cdnjs.cloudflare.com;">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1349.0/aws-sdk.min.js" integrity="sha512-UkZItCZku/xoMGtOrZWLpaY75t59lIoKboygn2zVA+ohng4kiVYJTQUEncZN+J6HE4ehR5IucdunfhDKJE2kwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></head>
 
 <body>
-    <script src="/js/put.js"></script>
+    <script src="/js/service/zconfigLoader.js"></script>
+    <script src="/js/service/storage.js"></script>
+    <script src="/js/test/put.js"></script>
 </body>
 
 </html>

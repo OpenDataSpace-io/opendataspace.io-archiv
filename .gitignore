@@ -1,1 +1,3 @@
 .env
+public/js/service/zconfigLoader.js
+src/service/zconfigLoader.ts
