@@ -5,5 +5,5 @@ function createObject(path, data) {
     instanceS3.uploadObject(path, data);
 }
 const key = "test/username.json";
-const data = { username: "TEST" };
+const data = { username: "TEST2" };
 createObject(key, data);
