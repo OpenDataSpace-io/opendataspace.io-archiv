@@ -55,13 +55,29 @@ var editor = new JSONEditor(document.getElementById('editor_holder'), {
         }
     }
 });
+function createObject(path, data) {
+    const appS3Config = getAppS3Config();
+    const instanceS3 = new S3StorageService(appS3Config);
+    instanceS3.uploadObject(path, data);
+}
+console.log("Load JSON-Editor");
 // Hook up the submit button to log to the console
 //@ts-ignore
 document.getElementById('submit').addEventListener('click', function () {
     console.log("Submit button clicked");
+    let uuid = self.crypto.randomUUID();
+    console.log(uuid);
     // Get the value from the editor
     console.log(editor.getValue());
+    const key = "api/rest/v1/object/" + uuid + ".json";
+    //const data = { username: "TEST" };
+    createObject(key, editor.getValue());
 });
+var url = new URL(document.URL);
+console.log(url.pathname);
+console.log(url.search);
+var params = url.searchParams;
+console.log(params.get("id"));
 class S3StorageService {
     constructor(appS3Config) {
         this.bucketName = appS3Config.bucketName;
